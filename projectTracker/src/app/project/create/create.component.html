@@ -1,0 +1,128 @@
+<div class="center">
+  <mat-card class="mat-elevation-z5 text-center" style="width: 50%">
+    <mat-card-title>Create Project</mat-card-title>
+    <form
+      class="form"
+      [formGroup]="projectForm"
+      (ngSubmit)="projectService.createProject(projectForm.value)"
+    >
+      <mat-card-content>
+        <mat-form-field class="full-width">
+          <mat-label>Title</mat-label>
+          <input formControlName="name" matInput value="" />
+        </mat-form-field>
+        <mat-grid-list cols="3" rowHeight="2:1">
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Reason</mat-label>
+              <mat-select formControlName="reason">
+                <mat-option
+                  *ngFor="let reason of reasonList"
+                  [value]="reason"
+                  >{{ reason }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Type</mat-label>
+              <mat-select formControlName="type">
+                <mat-option
+                  *ngFor="let type of typeList"
+                  [value]="type"
+                  >{{ type }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Division</mat-label>
+              <mat-select formControlName="division">
+                <mat-option
+                  *ngFor="let division of divisionList"
+                  [value]="division"
+                  >{{ division }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Category</mat-label>
+              <mat-select formControlName="category">
+                <mat-option
+                  *ngFor="let category of categoryList"
+                  [value]="category"
+                  >{{ category }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Priority</mat-label>
+              <mat-select formControlName="priority">
+                <mat-option
+                  *ngFor="let priority of priorityList"
+                  [value]="priority"
+                  >{{ priority }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Department</mat-label>
+              <mat-select formControlName="department">
+                <mat-option
+                  *ngFor="let department of departmentList"
+                  [value]="department"
+                  >{{ department }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Start Date</mat-label>
+              <input matInput formControlName="startdate" [matDatepicker]="startDatePicker" />
+              <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #startDatePicker></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>End Date</mat-label>
+                <input matInput formControlName="enddate" [matDatepicker]="endDatePicker" />
+                <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #endDatePicker></mat-datepicker>
+              </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Location</mat-label>
+              <mat-select formControlName="location">
+                <mat-option
+                  *ngFor="let location of locationList"
+                  [value]="location"
+                  >{{ location }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-flat-button
+          color="primary"
+          [disabled]="!projectForm.valid"
+        >
+          Save Project
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,14 @@
+<div *ngIf="loginService.isAuthenticated" style="padding: 10px">
+  <button mat-button routerLink="dashboard">Dashboard</button>
+  <button mat-button routerLink="project/list">List</button>
+  <button mat-button routerLink="project/create">Add</button>
+  <button
+    style="float: right"
+    mat-stroked-button
+    color="accent"
+    (click)="loginService.logout()"
+  >
+    Logout
+  </button>
+</div>
+<router-outlet></router-outlet>
