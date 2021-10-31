@@ -17,7 +17,7 @@
               <mat-label>Reason</mat-label>
               <mat-select formControlName="reason">
                 <mat-option
-                  *ngFor="let reason of reasonList"
+                  *ngFor="let reason of projectService.static.reasonList"
                   [value]="reason"
                   >{{ reason }}</mat-option
                 >
@@ -29,7 +29,7 @@
               <mat-label>Type</mat-label>
               <mat-select formControlName="type">
                 <mat-option
-                  *ngFor="let type of typeList"
+                  *ngFor="let type of projectService.static.typeList"
                   [value]="type"
                   >{{ type }}</mat-option
                 >
@@ -41,7 +41,7 @@
               <mat-label>Division</mat-label>
               <mat-select formControlName="division">
                 <mat-option
-                  *ngFor="let division of divisionList"
+                  *ngFor="let division of projectService.static.divisionList"
                   [value]="division"
                   >{{ division }}</mat-option
                 >
@@ -53,7 +53,7 @@
               <mat-label>Category</mat-label>
               <mat-select formControlName="category">
                 <mat-option
-                  *ngFor="let category of categoryList"
+                  *ngFor="let category of projectService.static.categoryList"
                   [value]="category"
                   >{{ category }}</mat-option
                 >
@@ -65,7 +65,7 @@
               <mat-label>Priority</mat-label>
               <mat-select formControlName="priority">
                 <mat-option
-                  *ngFor="let priority of priorityList"
+                  *ngFor="let priority of projectService.static.priorityList"
                   [value]="priority"
                   >{{ priority }}</mat-option
                 >
@@ -77,7 +77,7 @@
               <mat-label>Department</mat-label>
               <mat-select formControlName="department">
                 <mat-option
-                  *ngFor="let department of departmentList"
+                  *ngFor="let department of projectService.static.departmentList"
                   [value]="department"
                   >{{ department }}</mat-option
                 >
@@ -105,7 +105,7 @@
               <mat-label>Location</mat-label>
               <mat-select formControlName="location">
                 <mat-option
-                  *ngFor="let location of locationList"
+                  *ngFor="let location of projectService.static.locationList"
                   [value]="location"
                   >{{ location }}</mat-option
                 >

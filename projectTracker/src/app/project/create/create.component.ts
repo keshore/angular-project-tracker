@@ -20,27 +20,6 @@ export class CreateComponent implements OnInit {
     enddate: new FormControl('', Validators.required),
     location: new FormControl('', Validators.required),
   });
-
-  reasonList: string[] = ['Business', 'Dealership', 'Transport'];
-  typeList: string[] = ['Internal', 'External', 'Vendor'];
-  divisionList: string[] = [
-    'Compressor',
-    'Filter',
-    'Pumps',
-    'Glass',
-    'Water Heater',
-  ];
-  categoryList: string[] = ['Quality A', 'Quailty B', 'Quality C', 'Quality D'];
-  priorityList: string[] = ['High', 'low', 'Medium'];
-  departmentList: string[] = [
-    'Strategy',
-    'Finance',
-    'Quality',
-    'Maintenance',
-    'Stores',
-    'HR',
-  ];
-  locationList: string[] = ['Pune', 'Mumbai', 'Delhi', 'Calcutta', 'Bangalore'];
   
   constructor(public projectService: ProjectService) {}
 

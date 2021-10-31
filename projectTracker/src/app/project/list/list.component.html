@@ -1,1 +1,46 @@
-<p>list works!</p>
+<h2 style="text-align: center">Project Listing</h2>
+
+<div style="padding: 10px">
+  <mat-form-field appearance="standard">
+    <mat-label>Search Project</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Ex. ium"
+      #input
+    />
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container
+      matColumnDef="{{ column }}"
+      *ngFor="let column of displayedColumns"
+    >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ column }}</th>
+      <div *ngIf="column != 'action'">
+        <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+      </div>
+      <div *ngIf="column == 'action'">
+        <td mat-cell *matCellDef="let element">
+          <button mat-stroked-button color="primary">Start</button>
+          <button mat-stroked-button color="accent">Close</button>
+          <button mat-stroked-button color="warn">Cancel</button>
+        </td>
+      </div>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        No data matching the filter "{{ input.value }}"
+      </td>
+    </tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page of users"
+  ></mat-paginator>
+</div>

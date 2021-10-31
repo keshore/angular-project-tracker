@@ -18,7 +18,7 @@ export class LoginService {
       (data) => {
         this.isAuthenticated = true;
         console.log(data);
-        this.router.navigate(['/project/create']);
+        this.router.navigate(['/project/list']);
       },
       (err) => {
         console.error(err);
